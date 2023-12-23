@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --text-color: #ff7b00;
+    --bg-color: #2f2c2c;
+    --white: #fff;
+    --black: #000;
+    --mob-color: #3f3c3c;
+}
+
+.container {
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background: var(--bg-color);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    z-index: 1;
+}
+
+nav .logo a {
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+nav .logo a span {
+    color: var(--text-color);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    font-size: 18px;
+    list-style: none;
+    z-index: 1;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+    text-transform: uppercase;
+    transition: 0.3 ease;
+}
+
+nav ul li a:hover {
+    color: var(--text-color);
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background: var(--text-color);
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+nav .order {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 24px;
+    border-radius: 5px;
+    color: var(--white);
+    background: var(--text-color);
+    border: 2px solid var(--text-color);
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+nav .order:hover {
+    background: transparent;
+    color: var(--text-color);
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger .menu {
+    display: none;
+}
+
+.hamburger svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5em;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--white);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+/* Home Section */
+
+.home {
+    background: var(--bg-color);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+    padding: 250px 0 50px;
+}
+
+.home .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    flex: 1;
+}
+
+.left h1 {
+    font-size: 4em;
+    line-height: 1.1em;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.left p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 25px;
+    color: #dedede;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.left .btn {
+    margin: 25px 0 0;
+}
+
+.left .social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.left .social a {
+    text-decoration: none;
+    background: var(--text-color);
+    color: var(--white);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease;
+    border: 2px solid var(--text-color);
+}
+
+.left .social a i {
+    font-size: 20px;
+}
+
+.left .social a:hover {
+    transform: translateY(-5px);
+    color: var(--text-color);
+    background: transparent;
+}
+
+.left .btn button {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 24px;
+    border-radius: 5px;
+    color: var(--white);
+    background: var(--text-color);
+    border: 2px solid var(--text-color);
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.left .btn button:hover {
+    color: var(--text-color);
+    background: transparent;
+    transform: translateY(-5px);
+}
+
+.right {
+    flex: 1;
+}
+
+.right .image {
+    text-align: right;
+}
+
+.right .image img {
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+.right .image img:hover {
+    transform: scale(1.05);
+}
+
+/* Media screen */
+
+@media screen and (max-width: 1280px) {
+
+    nav {
+        padding: 0 50px;
+    }
+
+    .home {
+        padding: 250px 50px;
+        z-index: auto;
+    }
+
+    .left h1 {
+        font-size: 3em;
+    }
+
+    .right .image img {
+        width: 450px;
+        height: 450px;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    header {
+        background: var(--mob-color);
+        position: sticky;
+        top: 0;
+        z-index: 9;
+    }
+
+    nav .logo a {
+        font-size: 30px;
+    }
+
+    nav .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        max-width: 60%;
+        width: 100%;
+        height: 100vh;
+        background: var(--mob-color);
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 30px 50px;
+        gap: 30px;
+        transition: 0.5s ease-in;
+    }
+
+    nav ul li a {
+        font-size: 22px;
+    }
+
+    nav ul.active {
+        left: 0%;
+    }
+
+    .home {
+        position: relative;
+        padding: 30px 50px;
+    }
+
+    .info {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .right .image img {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    nav {
+        padding: 0 30px;
+    }
+
+    nav ul {
+        padding: 30px 30px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    .home {
+        padding: 30px;
+    }
+
+    .left h1 {
+        font-size: 2.5em;
+    }
+
+    .left p {
+        font-size: 14px;
+    }
+
+    .right .image img {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 427px) {
+    .left h1 {
+        font-size: 2.1em;
+    }
+}
